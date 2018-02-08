@@ -8,9 +8,9 @@ def sum_odd_numbers(num):
     '''
     total = 0
     #write your code starting here; use total as the sum total
-    for sum_odd_numbers in range(1, num + 1):
-        if i % 2 == 1:
-            total == i
+    for num in range(1, num + 1):
+        if num % 2 != 0:
+            total += num
             
     return total
 
