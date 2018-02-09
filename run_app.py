@@ -1,1 +1,1 @@
-import src.homework.main.main_assignment4
+import src.assignment.main_assignment4.py
