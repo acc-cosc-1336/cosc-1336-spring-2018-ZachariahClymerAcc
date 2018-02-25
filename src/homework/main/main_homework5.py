@@ -11,33 +11,28 @@
 #Open a file for text reading.
 #Read the saved file and output table
 
-from homework5 import write_sales_data
-from homework5 import read_sales_data
+from src.homework.homework5 import write_sales_data
+from src.homework.homework5 import read_sales_data
 
 def main():
-    infile = open('salesrecord.txt', 'w')
-    infile.write('name' + '\t' + 'price' + '\n')
-
-    num_of_items = int(input("Enter number of items: "))
-
+    file_object = open('sales_data.txt', 'w')
+    num_items = int(input('Enter how many items with prices you have: '))
     total = 0
-    for items in range(1, num_of_items+1):
-        item = input('Enter name of item: ')
+    file_object.write ('Item' + '\t' +'\t' + 'Price'+ "\n")
+    for num_items in range (1, num_items +1):
+        item = input('Enter item: ')
         price = float(input('Enter price of item: '))
-        infile.write(str(item)+ '\t')
-        infile.write(str("{0:.2f}".format(price))+ '\n')
+        write_sales_data(file_object, item, price)
+        #total sums up all the prices
         total += price
+    #avg_price takes the total of all prices and divides by num_items
+    avg_price = total / num_items
+    file_object.write ('Total'+ '\t'+'\t' + str(total)+"\n")
+    file_object.write ('Avg Price'+ '\t' + str(avg_price)+"\n")
+    file_object.close()
 
-    infile.write('total' + '\t'+ str("{0:.2f}".format(total))+ '\n')
-
-    avg = total / num_of_items
-    infile.write('Avg' + '\t'+ str("{0:.2f}".format(avg)))
-    infile.close()
-        
-    infile = open('salesrecord.txt', 'r')
-    file_contents = infile.read()
-    infile.close()
-    print(file_contents)
-        
+    file_object = open('sales_data.txt', 'r')
+    read_sales_data(file_object)
+    file_object.close()
+ 
 main()
-
