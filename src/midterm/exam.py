@@ -8,7 +8,8 @@ RUN THE PROVIDED TEST CASES TO VALIDATE YOUR CODE
 '''
 def get_miles_per_hour(kilometers, total_minutes):
     hours = total_minutes / 60
-    return(miles/hours ** .621371,2)
+    miles = kilometers * .621371
+    return miles/hours
 
 
 
@@ -33,13 +34,13 @@ Return Value:
 '''
 def get_bonus_pay_amount(sales):
     if sales >= 0 and sales <= 499:
-        return (sales ** .05)
+        return (sales * .05)
     elif sales >= 499 and sales <= 999:
-        return (sales ** .06)
+        return (sales * .06)
     elif sales >= 999 and sales <= 1499:
-        return (sales ** .07)
+        return (sales * .07)
     elif sales >= 1499 and sales <= 1999:
-        return (sales ** .08)
+        return (sales * .08)
     else:
         return 'Invalid input'
 
@@ -63,9 +64,14 @@ ataD gnirtS yM
 CREATE A TEST CASE IN THE exam_test.py file.
 '''
 def reverse_string(string1):
-    string1_rev = string1 [::-1]
-    return string1_rev
-
+    reverse = ''
+    i = len(string1)-1
+    
+    while i >= 0:
+        reverse += string1[i]
+        i -= 1
+    
+    return reverse
 
 
 
@@ -83,10 +89,10 @@ Returns:
 CREATE A TEST CASE IN THE exam_test.py file.
 '''
 def get_list_min_max(list1):
-    return_list = int(input('Enter list: '))
-    min_value = min(return_list)
-    max_value = max(return_list)
-    return(min_value, max_value)
+    
+    min_value = min(list1[1:])
+    max_value = max(list1[1:])
+    return [min_value, max_value]
 
 
 
@@ -110,11 +116,20 @@ Return Value:
 
 '''
 def get_list_min_max_file():
-    file = open('quiz.dat','r')
-    return_list = []
-    for line in file:
-        list1 = line.split(',')
-        min_value = min(return_list)
-        max_value = max(return_list)
-    return return_list
+file = open('quiz.dat', 'r')
+    tmp_list = []
 
+    for line in file:
+        list1 = line.split()
+        i = 0
+        while i < len(list1):
+            if list1[i].isdigit():
+                list1[i] = int(list1[i])
+            i += 1
+
+        tmp_list.append(get_list_min_max(list1)[0])
+        tmp_list.append(get_list_min_max(list1)[1])
+
+    return_list = [min(tmp_list[1:]), max(tmp_list[1:])]
+
+    return return_list
