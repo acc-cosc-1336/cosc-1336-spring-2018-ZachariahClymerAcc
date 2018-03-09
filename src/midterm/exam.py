@@ -132,4 +132,5 @@ file = open('quiz.dat', 'r')
 
     return_list = [min(tmp_list[1:]), max(tmp_list[1:])]
 
+    file.close()
     return return_list
