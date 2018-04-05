@@ -8,8 +8,8 @@ class main():
 
 
     def start_game():
-        player = Player()
-        player.roll_doubles()
+        self.player = Player()
+        self.player.roll_doubles()
 
 main = Main()
 main.start()
