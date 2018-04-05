@@ -21,14 +21,13 @@ class Player:
         The roll_doubles method that will roll die1 and die2 (attributes from constructor method),
         display rolled values,and continue iterating until a double is rolled.
         '''
-        dice1 = 0
-        dice2 = 0
-
+        dice1 = 1
+        dice2 = 2
+        
         while dice1 != dice2:
-            dice1 = self.dice1()
-            dice2 = self.dice2()
-
-            print ('You rolled, ', dice1, dice2)
-
+            dice1 = self.die1.roll()
+            dice2 = self.die2.roll()
+            print('You Rolled: ', dice1, dice2)
+            
         if dice1 == dice2:
-            print ('You got doubles!')
+            print('Ay! You got doubles!', dice1, dice2)
