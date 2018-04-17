@@ -1,1 +1,1 @@
-from src.homework.homework4.main import Main
+from src.homework.homework7.main import Main
