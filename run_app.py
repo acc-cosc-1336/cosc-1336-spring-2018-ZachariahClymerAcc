@@ -1,1 +1,1 @@
-from src.homework.homework7.main import Main
+import src.assignments.main_assignment7
