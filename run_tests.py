@@ -1,6 +1,6 @@
 import unittest
 
-from tests.homework import test_homework6
+from tests.assignment import test_assignment10
 
-suite = unittest.TestLoader().loadTestsFromModule(test_homework6)
+suite = unittest.TestLoader().loadTestsFromModule(test_assignment10)
 unittest.TextTestRunner(verbosity=2).run(suite)
