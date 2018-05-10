@@ -1,17 +1,19 @@
-from product import Product
+from src.assignments.assigmnent10.product import Product
+import unittest
 
 class InvoiceItem:
 
-    def __init__(self, quantity, Product):
+    def __init__(self,product,quantity):
         '''
         ASSIGNMENT10: 
         Remove description and cost parameters. Replace with a product class
         '''
 
         #ASSIGNMENT10: update code to use product class
-        Product.name = description
+        self.product = product
         self.quantity = quantity
-        Product.cost = cost
+        
+       
 
 
     def get_extended_cost(self):
@@ -20,8 +22,11 @@ class InvoiceItem:
         :return:  extended cost
         '''
         #ASSIGNMENT10: MODIFY CODE TO GET THE COST FROM THE PRODUCT ATTRIBUTE
-        return Product.cost * self.quantity
-
+        return self.product.cost * self.quantity
+    
     def get_description(self):
         #ASSIGNMENT10: MODIFY CODE TO GET THE NAME FROM THE PRODUCT ATTRIBUTE
-        return Product.name
+        return self.product.name
+
+if __name__ == "__main__":
+    unittest.main()
