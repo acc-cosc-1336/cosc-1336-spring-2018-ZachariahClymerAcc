@@ -66,5 +66,5 @@ def main1():
     for i in range(loops):
         odds = sum_odd_numbers(i)
         print(odds)
-        evens = list_of_even+numbers
+        evens = list_of_even_numbers(i)
         print(evens)
