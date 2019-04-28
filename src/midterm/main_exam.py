@@ -9,18 +9,12 @@ Pass the string to the reverse string function and display the reversed string
 
 '''
 def main():
-    new_string = []
     again = 'y'
     while again == 'y':
-        num =(input('Enter name of String: '))
-        new_list.append(num)
+        value =(input('Enter name of String: '))
 
-        while again2 == 'y':
-             num = int(input('Enter name of String: '))
-             input('Enter String: ')
-             new_string.append(num)
-             print('Do you want to add another String?')
-             again2 = input('y = yes, n = no: ')
-             print()
+        print(reverse_string(value))
+
         again = input('y = yes, n = no: ')
-    return new_string
+
+main()
