@@ -41,7 +41,7 @@ class Test_Midterm(unittest.TestCase):
         5 points
         Test with ['joe', 10, 15, 20, 30, 40]    Returns:    [10, 40]
         '''
-        self.assertEqual('10, 40', list1('joe', 10, 15, 20, 30, 40))
+        self.assertEqual([10, 40], list1('joe', 10, 15, 20, 30, 40))
 
 
     def test_get_list_min_max_file(self):
@@ -49,8 +49,8 @@ class Test_Midterm(unittest.TestCase):
         5 points
         Test with quiz.data file the return value should be [2,89]
         '''
-        self.assertEqual([2,89], quiz.data)
+        self.assertEqual([2,89], get_list_min_max_file())
 
 
-unittest.main(verbosity = 2)
+#unittest.main(verbosity = 2)
     
